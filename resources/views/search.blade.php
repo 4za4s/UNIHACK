@@ -16,8 +16,16 @@
         </style>
     </head>
     <body class="antialiased">
-        <form action="{{ url('search') }}" method="GET">
+        <form method="GET">
             <input type="search" name="search" id="search" placeholder="Search" />
         </form>
+
+        @if (isset($search))
+            @forelse ($search as $user)
+                <p>{{ $user -> name }}</p>
+            @empty
+                <p>No results found</p>
+            @endforelse
+        @endif
     </body>
 </html>

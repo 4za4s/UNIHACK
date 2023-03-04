@@ -17,12 +17,8 @@ use App\Models\User;
 Route::controller(App\Http\Controllers\Controller::class)->group( function () {
 
     Route::get('/', function () {
-        if (request()->search) {
-            $search = User::where('name', 'like', '%' . request()->search . '%')->get();
-            return view('welcome')->with('search', $search);
-        }
-        else {
-            return view('welcome');
-        }
+        return view('welcome');
     });
+
+    Route::get('search', 'searchName');
 });
