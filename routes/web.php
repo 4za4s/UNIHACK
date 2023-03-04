@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(App\Http\Controllers\Controller::class)->group( function () {
+
+    Route::get('/', function () {
+        if (request()->search) {
+            $search = User::where('name', 'like', '%' . request()->search . '%')->get();
+            return view('welcome')->with($search);
+        }
+        else {
+            return view('welcome');
+        }
+    });
 });
