@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="no-js vlt-is--custom-cursor" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ $setting->meta_title }}</title>
+	<meta name="description" content="{{ $setting->meta_description }}">
+	<meta name="keywords" content="{{ $setting->meta_keywords }}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!--Favicon-->
+	<link rel="icon" type="image/png" href="{{ url('storage/'.$setting->favicon) }}">
+	<!--Framework-->
+	<link rel="stylesheet" href="{{ url('assets/css/framework/bootstrap.min.css') }}">
+	<!--Fonts-->
+	<link rel="stylesheet" href="{{ url('assets/fonts/Inter/style.css') }}">
+	<!--Plugins-->
+	<link rel="stylesheet" href="{{ url('assets/css/vlt-plugins.min.css') }}">
+	<!--Style-->
+	<link rel="stylesheet" href="{{ url('assets/css/vlt-main.css') }}">
+	<!--Custom-->
+	<link rel="stylesheet" href="{{ url('assets/css/custom.css') }}">
+
+</head>
+
+<body class=" animsition">
+	<!--Header-->
+	<header class="vlt-header">
+		<div class="vlt-navbar vlt-navbar--main vlt-navbar--fixed">
+			<div class="vlt-navbar-background"></div>
+			<div class="vlt-navbar-inner">
+				<div class="vlt-navbar-inner--left">
+					<!--Logo--><a class="vlt-navbar-logo" href="{{ url('/') }}"><img class="black" src="{{ url('storage/'.$setting->logo) }}" alt="Logo"><img class="white" src="{{ url('storage/'.$setting->logo) }}" alt="Logo"></a>
+					<!--Contacts-->
+					<nav class="vlt-navbar-contacts d-none d-md-block">
+						<ul>
+							<li><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a></li>
+							<li class="sep">/</li>
+							<li><a href="tel:{{ $setting->fax }}">{{ $setting->fax }}</a></li>
+							<li class="sep">/</li>
+							<li><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!--<div class="vlt-navbar-inner--right">-->
+				<!--	<div class="d-flex align-items-center">-->
+						<!--Menu Burger--><a class="vlt-menu-burger js-offcanvas-menu-open" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+				<!--				<line x1="3" y1="12" x2="21" y2="12" />-->
+				<!--				<line x1="3" y1="6" x2="21" y2="6" />-->
+				<!--				<line x1="3" y1="18" x2="21" y2="18" /></svg></a>-->
+				<!--	</div>-->
+				<!--</div>-->
+			</div>
+		</div>
+	</header>
+	<!--Offcanvas Menu-->
+	<div class="vlt-offcanvas-menu">
+		<!--<div class="vlt-offcanvas-menu__header">-->
+			<!--Locales-->
+			<!-- <nav class="vlt-offcanvas-menu__locales"><a class="active" href="#">Eng</a><a href="#">Fra</a><a href="#">Ger</a></nav> -->
+			<!--Menu Burger-->
+			<!--<a class="vlt-menu-burger vlt-menu-burger--opened js-offcanvas-menu-close" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round">-->
+					<!--<line x1="18" y1="6" x2="6" y2="18" />-->
+					<!--<line x1="6" y1="6" x2="18" y2="18" /></svg></a>-->
+		<!--</div>-->
+		<!--<nav class="vlt-offcanvas-menu__navigation">-->
+			<!--Navigation-->
+		<!--	<ul class="sf-menu">-->
+		<!--		<li data-menuanchor="Home"><a href="#Home">Home</a></li>-->
+		<!--		<li data-menuanchor="Location"><a href="#Location">Locations</a></li>-->
+		<!--		<li data-menuanchor="About"><a href="#About">About</a></li>-->
+		<!--		<li data-menuanchor="Company"><a href="#Company">Company</a></li>-->
+		<!--		<li data-menuanchor="Videos"><a href="#Videos">Videos</a></li>-->
+		<!--		<li data-menuanchor="CompanyIntro"><a href="#CompanyIntro">Company Intro</a></li>-->
+				<!-- <li data-menuanchor="Testimonials"><a href="#Testimonials">Testimonials</a></li>
+		<!--		<li data-menuanchor="Blog"><a href="#Blog">Blog</a></li>-->
+		<!--		<li data-menuanchor="Contact"><a href="#Contact">Contact</a></li> -->-->
+		<!--	</ul>-->
+		<!--</nav>-->
+		<div class="vlt-offcanvas-menu__footer">
+			<!--Socials-->
+			<div class="vlt-offcanvas-menu__socials">
+                @if($setting->facebook_link)
+            <a href="{{$setting->facebook_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+            </a>
+            @endif
+            @if($setting->twitter_link)
+            <a href="{{$setting->twitter_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+</svg>
+            </a>
+            @endif
+            @if($setting->linkedin_link)
+            <a href="{{$setting->linkedin_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+</svg>
+            </a>
+            @endif
+            @if($setting->youtube_link)
+            <a href="{{$setting->youtube_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+</svg>
+            </a>
+            @endif
+            </div>
+			<!--Copyright-->
+			<div class="vlt-offcanvas-menu__copyright">
+				<p>&copy; {{ date("Y") }} Copiright.<br>All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+	<!--Site Overlay-->
+	<div class="vlt-site-overlay"></div>
+	<!--Fixed Socials-->
+	<div class="vlt-fixed-socials">
+            @if($setting->facebook_link)
+            <a href="{{$setting->facebook_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+            </a>
+            @endif
+            @if($setting->twitter_link)
+            <a href="{{$setting->twitter_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+</svg>
+            </a>
+            @endif
+            @if($setting->linkedin_link)
+            <a href="{{$setting->linkedin_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+</svg>
+            </a>
+            @endif
+            @if($setting->youtube_link)
+            <a href="{{$setting->youtube_link}}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+</svg>
+            </a>
+            @endif
+    </div>
+	<!--Main-->
+	<main class="vlt-main">
+		<!--Fullpage Slider-->
+		<div class="vlt-fullpage-slider" data-loop-top="" data-loop-bottom="" data-speed="800">
+			<!--Home-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="Home" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content">
+						<!--Particles-->
+						<!-- <div class="vlt-section__particles">
+							<div class="vlt-particle vlt-fade-in-left vlt-custom--1451" style="background-image: url(assets/img/root/plus-dark-pattern.png); transition-duration: 1s;"></div>
+							<div class="vlt-particle d-none d-xl-block vlt-fade-in-right vlt-custom--1512" style="background-image: url(assets/img/root/elipse-home-slide.png); transition-duration: 1.5s; transition-delay: 300ms;"></div>
+							<div class="vlt-particle vlt-custom--4124" style="background-image: url(assets/img/map-globe.png);"></div>
+						</div> -->
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-5">
+									<div class="vlt-animated-block text-center " style="animation-delay:0s; animation-duration:1200ms;">
+										<img class="white animate-updown1" src="{{ url('storage/'.$setting->slider_logo) }}" alt="Microsite" width="98%">
+									</div>
+								</div>
+								<div class="col-lg-6 offset-lg-1">
+									<!--Animated Block-->
+									<div class="vlt-animated-block" style="animation-delay:0s; animation-duration:1200ms;">
+										<!-- <img class="white" src="{{ url('storage/'.$setting->slider_logo) }}" alt="Microsite" width="600"> -->
+										<!-- <h5 class="vlt-display-1 has-white-color">Mikael Moore</h5> -->
+										<div class="vlt-gap-10"></div>
+										<h1 class="vlt-large-heading has-white-color">{{ $page->slider }}</h1>
+										<div class="vlt-gap-40"></div>
+										<div class="row">
+											<div class="col-auto">
+												<div class="vlt-counter-up-small" data-ending-number="{{ $page->count }}" data-animation-speed="1000" data-delimiter=""><span class="counter">0</span>
+													<h6 class="vlt-display-1">{!! $page->count_title !!}</h6>
+												</div>
+												<div class="vlt-gap-20--sm"></div>
+											</div>
+											<!-- <div class="col-auto">
+												<div class="vlt-counter-up-small" data-ending-number="18" data-animation-speed="1000" data-delimiter=""><span class="counter">0</span>
+													<h6 class="vlt-display-1">Sutisfied<br>customers</h6>
+												</div>
+											</div> -->
+										</div>
+										<div class="vlt-gap-40"></div><a class="vlt-link has-white-color" href="#Location">Zu den Projekten</a>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<img class="white rotate" src="{{ url('assets/img/globe2.png') }}" alt="Microsite" width="100%" style="position: absolute;top: -200px;z-index: -1;opacity: 0.8;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Services-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="Location" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content" style="padding-top: 2.5rem; padding-bottom: 0px;">
+						<!--Particles-->
+						<div class="vlt-section__particles">
+							<!-- <div class="vlt-particle vlt-custom--1259 vlt-fade-in-right" style="background-image: url(assets/img/root/plus-light-pattern.png); animation-delay: 750ms;"></div> -->
+							<div class="vlt-particle vlt-custom--2355 vlt-fade-in-left" style="background-image: url(assets/img/root/elipse-light.png); animation-delay: 500ms;"></div>
+						</div>
+						<div class="container-fluid" style="padding: 0px;">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="map-area">
+										<div id="googleMap" style="width:100%;height:680px"></div>
+                                        <!-- <div id="viewDiv" style="padding: 0;margin: 0;height: 100%;width: 100%;"></div> -->
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Awards-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="About" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content">
+						<!--Particles-->
+						<div class="vlt-section__particles">
+							<div class="vlt-particle vlt-custom--2355 vlt-fade-in-left" style="background-image: url(assets/img/root/elipse-light.png); animation-delay: 500ms;"></div>
+						</div>
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-11 offset-lg-1">
+									<!--Animated Block-->
+									<div class="text-white" style="animation-delay:0s; animation-duration:1200ms;">
+										<div class="vlt-gap-50"></div>
+										<h4 class="text-white zoom-animate">{!! $page->about_title !!}</h4>
+										<div class="vlt-gap-20"></div>
+										<div class="zoom-animate">{!! $page->about_body !!}</div>
+										<div class="vlt-gap-40"></div>
+										<img src="{{ url('storage/'.$page->about_signature) }}" class="zoom-animate" alt="signature" width="200">
+									</div>
+									<div class="vlt-gap-50"></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Awards-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="Company" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content">
+						<!--Particles-->
+						<div class="vlt-section__particles">
+							<div class="vlt-particle vlt-custom--2355 vlt-fade-in-left" style="background-image: url(assets/img/root/elipse-light.png); animation-delay: 500ms;"></div>
+						</div>
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-8 offset-lg-2">
+									<!--Animated Block-->
+									<div class="vlt-gap-0"></div>
+									<div class="vlt-animated-block text-center text-white" style="animation-delay:0s; animation-duration:1200ms;">
+										<h4 class=" text-white  zoom-animate">{!! $page->company_title !!}</h4>
+										<div class="vlt-gap-20"></div>
+                                        {!! $page->company_description !!}
+									</div>
+									<div class="vlt-gap-50"></div>
+
+								</div>
+								<div class="col-lg-8 offset-lg-2">
+									<!--Animated Block-->
+									<div class="vlt-animated-block" style="animation-delay:400ms; animation-duration:1200ms;">
+										<div class="vlt-slide-photo">
+											<div class="vlt-slide-photo__inside"><img src="{{ url('storage/'.$page->company_video_image) }}" alt="">
+												<!--Video Button-->
+												<div class="vlt-video-button center-mode"><a href="{{ $page->company_video }}" data-fancybox data-small-btn="true" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+															<polygon points="5 3 19 12 5 21 5 3" /></svg></a>
+													<h6>Watch Video</h6>
+												</div>
+											</div>
+											<!-- <div class="vlt-slide-photo__caption">* Video inauguration “Best Design” in Italy.</div> -->
+											<div class="vlt-slide-photo__particle vlt-fade-in-left--small negative-z-index" style="right: -40px; top: -40px; width: 290px; transition-delay: 1.2s;"><img src="{{ url('assets/img/root/plus-light-pattern.png') }}" alt=""></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Awards-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="Videos" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content">
+						<!--<div class="vlt-section__ken-burn-background"><img src="{{ url('as sets/img/attachment-03.jpg') }}" alt=""></div>-->
+						<!--Particles-->
+						<div class="vlt-section__particles">
+							<div class="vlt-particle vlt-custom--2355 vlt-fade-in-left" style="background-image: url(assets/img/root/elipse-light.png); animation-delay: 500ms;"></div>
+						</div>
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-11 offset-lg-1">
+									<!--Animated Block-->
+									<div class="vlt-gap-50"></div>
+									<div class="row">
+                                        @foreach($videos as $video)
+										<div class="col-lg-3 mb-3">
+											<!--Animated Block-->
+											<div class="vlt-animated-block1 zoom-animate" style="animation-delay:0ms; animation-duration:1200ms;">
+												<div class="vlt-slide-photo1">
+													<div class="vlt-slide-photo__inside1">
+													    <a href="{{ $video->url }}" data-fancybox data-small-btn="true" rel="nofollow">
+													        <img src="{{ url('storage/'.$video->image) }}" alt="">
+													    </a>
+														<!--Video Button-->
+														<!--<div class="vlt-video-button center-mode"><a href="{{ $video->url }}" data-fancybox data-small-btn="true" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">-->
+														<!--			<polygon points="5 3 19 12 5 21 5 3" /></svg></a>-->
+														<!--	<h6>Watch Video</h6>-->
+														<!--</div>-->
+													</div>
+													<!-- <div class="vlt-slide-photo__caption">* Video inauguration “Best Design” in Italy.</div> -->
+													<!--<div class="vlt-slide-photo__particle vlt-fade-in-left--small negative-z-index" style="right: -40px; top: -40px; width: 290px; transition-delay: 1.2s;"><img src="{{ url('assets/img/root/plus-light-pattern.png') }}" alt=""></div>-->
+												</div>
+											</div>
+										</div>
+
+                                        @endforeach
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Awards-->
+			<!--Section-->
+			<div class="vlt-section pp-scrollable" data-anchor="CompanyIntro" data-brightness="dark" style=" z-index: 9; transform: translate3d(0px, 0px, 0px);background-color: #007857;background-position: top;">
+				<div class="vlt-section__vertical-align">
+					<div class="vlt-section__content">
+						<!--Particles-->
+						<div class="vlt-section__particles">
+							<div class="vlt-particle vlt-custom--2355 vlt-fade-in-left" style="background-image: url(assets/img/root/elipse-light.png); animation-delay: 500ms;"></div>
+						</div>
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-8 offset-lg-2">
+									<!--Animated Block-->
+									<div class="vlt-gap-0"></div>
+									<div class="vlt-animated-block1 text-center text-white" style="animation-delay:400ms; animation-duration:1200ms;">
+										<h4 class=" text-white zoom-animate">{!! $page->intro_title !!}</h4>
+										{!! $page->intro_description !!}
+									</div>
+									<div class="vlt-gap-50"></div>
+
+								</div>
+								<div class="col-lg-8 offset-lg-2">
+									<!--Animated Block-->
+									<div class="vlt-animated-block1 zoom-animate" style="animation-delay:00ms; animation-duration:1200ms;">
+										<div class="vlt-slide-photo">
+											<div class="vlt-slide-photo__inside"><img src="{{ url('storage/'.$page->intro_video_image) }}" alt="">
+												<!--Video Button-->
+												<div class="vlt-video-button center-mode"><a href="{{ $page->intro_video }}" data-fancybox data-small-btn="true" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+															<polygon points="5 3 19 12 5 21 5 3" /></svg></a>
+													<h6>Watch Video</h6>
+												</div>
+											</div>
+											<!-- <div class="vlt-slide-photo__caption">* Video inauguration “Best Design” in Italy.</div> -->
+											<div class="vlt-slide-photo__particle vlt-fade-in-left--small negative-z-index" style="right: -40px; top: -40px; width: 290px; transition-delay: 1.2s;"><img src="{{ url('assets/img/root/plus-light-pattern.png') }}" alt=""></div>
+										</div>
+									</div>
+									<div class="col-lg-12 text-center vlt-animated-block" style="animation-delay:1600ms; animation-duration:1200ms;">
+										<div class="vlt-gap-20"></div>
+										<a href="https://www.firmengruppe-cfuchs.de/" target="_blank" class="vlt-btn vlt-btn--secondary"><span class="vlt-btn__text">Zur Firmengruppe CFuchs</span><span class="vlt-btn__icon vlt-btn__icon--right"></span></a>
+										<div class="vlt-gap-50"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Progress Bar-->
+			<ul class="vlt-fullpage-slider-progress-bar">
+				<li data-menuanchor="Home"></li>
+				<li data-menuanchor="Location"></li>
+				<li data-menuanchor="About"></li>
+				<li data-menuanchor="Company"></li>
+				<li data-menuanchor="Videos"></li>
+				<li data-menuanchor="CompanyIntro"></li>
+				<!-- <li data-menuanchor="Testimonials"></li>
+				<li data-menuanchor="Blog"></li>
+				<li data-menuanchor="Contact"></li> -->
+			</ul>
+			<!--Numbers-->
+			<!--<div class="vlt-fullpage-slider-numbers"></div>-->
+		</div>
+		<!--Footer-->
+		<footer class="vlt-footer vlt-footer--fixed">
+			<!--Copyright-->
+			<div class="vlt-footer-copyright">
+				<p>{!! $setting->copyright_text !!} <br> Design & Develop by <a href="https://briskbase.com" target="_blank"><abbr title="Briskbase Software House">BBSH</abbr></a></p>
+			</div>
+		</footer>
+	</main>
+	<!--Libs-->
+	<script src="{{ url('assets/vendors/jquery-3.5.1.min.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?language=en&key=AIzaSyANJ03ykQk3sW_Osu4QRzuygNep9KiubH8"></script>
+	<script src="{{ url('assets/scripts/vlt-plugins.min.js') }}"></script>
+	<script src="{{ url('assets/scripts/vlt-helpers.js') }}"></script>
+	<script src="{{ url('assets/scripts/vlt-controllers.js') }}"></script>
+
+    <script>
+        var locationPins = {!! json_encode($pins) !!};
+        var lat = '{{ $setting->lat }}'
+        var lng = '{{ $setting->lng }}'
+    </script>
+
+	<script src="{{ url('assets/scripts/map.js') }}"></script>
+
+</body>
+
+</html>
