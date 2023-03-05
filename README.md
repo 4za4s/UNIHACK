@@ -1,4 +1,4 @@
-Project for Unihack 2023
+## Project for Unihack 2023
 
 VVol, intended to be a platform for connecting aspiring volunteers to organisations
 
